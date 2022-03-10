@@ -6,7 +6,47 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+     <%= "Your order total is: #{humanized_money_with_symbol @order.total_cents / 100}" %>
   </div>
+
+<h2> Your Order Summary </h2>
+<% @order.line_items.each do |item| %>
+      <% @name = item.product.name %>
+      <% @description = item.product.description %>
+      <% @image = item.product.image %>
+      <% @quantity = item.quantity %>
+      <% @price = item.item_price_cents %>
+      <% @email = @order.email %>
+
+  <article class="product-detail">
+        <div class="row">
+          <div class="col-sm-4">
+            <%= image_tag @image, class: 'img-thumbnail' %>
+          </div>
+
+          <div class="col-sm-8">
+            <dl class="dl-horizontal">
+              <dt>Name</dt>
+              <dd><%= @name %></dd>
+              <dt>Email</dt>
+              <dd><%= @email %></dd>
+              <dt>Description</dt>
+              <dd><%= @description %></dd>
+              <dt>Quantity</dt>
+              <dd><%= @quantity %></dd>
+              <dt>Item Price</dt>
+              <dd><%= humanized_money_with_symbol @price.to_f / 100 %></dd>
+              <dt>Item Total</dt>
+              <dd><%= humanized_money_with_symbol ( @price.to_f*@quantity / 100 )  %></dd>
+            </dl>
+          </div>
+        </div>
+      </article>
+    <hr/>
+
+<% end %>
+
+  <% puts "order: ", @order.line_items.inspect %>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
