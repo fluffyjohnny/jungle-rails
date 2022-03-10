@@ -86,8 +86,18 @@ main section.products-show {
 }
 
 
-// main section.dashboard-show {
-//   .dashboard_count {
-//     font: 20em;
-//   }
-// }
+main section.admin-product-index {
+  .dashboard_count {
+    font-size: 3em;
+  }
+}
+
+main section.about_us {
+  .team {
+    display: flex;
+    flex-direction: row;
+  }
+  img {
+    height: 300px;
+  }
+}
