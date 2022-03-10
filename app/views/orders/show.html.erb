@@ -9,8 +9,8 @@
      <%= "Your order total is: #{humanized_money_with_symbol @order.total_cents / 100}" %>
   </div>
 
-<h2> Your Order Summary </h2>
-<% @order.line_items.each do |item| %>
+  <h2> Your Order Summary </h2>
+    <% @order.line_items.each do |item| %>
       <% @name = item.product.name %>
       <% @description = item.product.description %>
       <% @image = item.product.image %>
@@ -18,7 +18,7 @@
       <% @price = item.item_price_cents %>
       <% @email = @order.email %>
 
-  <article class="product-detail">
+      <article class="product-detail">
         <div class="row">
           <div class="col-sm-4">
             <%= image_tag @image, class: 'img-thumbnail' %>
@@ -43,11 +43,7 @@
         </div>
       </article>
     <hr/>
-
-<% end %>
-
-  <% puts "order: ", @order.line_items.inspect %>
+  <% end %>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
 </section>
