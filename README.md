@@ -21,6 +21,16 @@ Testing:
 
 ## Demo
 
+### Users can browse available items 
+!["Products"](https://raw.githubusercontent.com/fluffyjohnny/jungle-rails/master/public/images/products.png)
+!["Product Detail"](https://raw.githubusercontent.com/fluffyjohnny/jungle-rails/master/public/images/product_detail.png)
+
+### They can add products to the cart and checkout 
+!["Cart"](https://raw.githubusercontent.com/fluffyjohnny/jungle-rails/master/public/images/cart.png)
+!["Checkout"](https://raw.githubusercontent.com/fluffyjohnny/jungle-rails/master/public/images/checkout.png)
+
+### Admins can edit products and categories
+!["Admin Products"](https://raw.githubusercontent.com/fluffyjohnny/jungle-rails/master/public/images/admin_products.png)
 
 ## Setup
 
