@@ -3,8 +3,10 @@ class CartsController < ApplicationController
   before_filter :authorize
   
   def show
+    if Sale.active.any?
     @sale = Sale.where('sales.starts_on <= ? AND sales.ends_on >= ?', Date.current, Date.current).first.percent_off    
     @percent = @sale / 100.0
+    end
   end
 
   def add_item

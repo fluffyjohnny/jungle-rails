@@ -34,14 +34,17 @@
       </tbody>
       <tfoot>
         <tr>
-            <% if @sale %>
-            <% puts 'sale: ', @percent%>
+            <% if active_sale? %>
+            <% puts @percent %>
           <th colspan="4">
             TOTAL: 
-            <%= @sale %>% OFF!
+            <div class='discount'>
+            <%= @sale %>% OFF! 
+            </div>
           </th>
           <th>
-            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 * @percent %>
+          <br>
+            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 * ( 1 - @percent ) %>
           </th>
           <% else %>
           <th colspan="4">
@@ -64,9 +67,9 @@
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-amount="<%= cart_subtotal_cents %>"
           data-name="Jungle"
-          data-description="John's Jungle Order"
+          data-description="Your Jungle Order"
           data-locale="auto"
-          data-email="john.chia0106@gmail.com"
+          data-email='test@test.com'
           data-currency="cad">
         </script>
       <% end %>

@@ -20,4 +20,8 @@
   <td>
     <%= sale.percent_off %>
   </td>
+  <td>
+  <%= link_to 'Edit', [:admin, sale], class: 'btn btn-sm btn-info', method: :edit %>
+  <%= link_to 'Delete', [:admin, sale], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" }%>
+  </td>
 </tr>
