@@ -34,12 +34,23 @@
       </tbody>
       <tfoot>
         <tr>
+            <% if @sale %>
+            <% puts 'sale: ', @percent%>
+          <th colspan="4">
+            TOTAL: 
+            <%= @sale %>% OFF!
+          </th>
+          <th>
+            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 * @percent %>
+          </th>
+          <% else %>
           <th colspan="4">
             TOTAL:
           </th>
           <th>
             <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
           </th>
+          <% end %>
         </tr>
       </tfoot>
     </table>
