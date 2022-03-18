@@ -1,13 +1,43 @@
-<section class="admin-sales-index">
+<section class="admin-category-new">
 
   <header class="page-header">
-    <h1>Sales &raquo; New</h1>
+    <h1> Sales &raquo; New Sale</h1>
   </header>
 
-  <div class="panel panel-default sales">
+  <div class="well">
+    <%= link_to 'All Sales', [:admin, :sales], class: 'btn btn-info' %>
+  </div>
 
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
+      <%= form_for [:admin, @sale] do |form| %>
+        <% if form.object.errors.any? %>
+          <div class="alert alert-danger">
+            <strong>The following errors prevented saving:</strong>
+            <ul>
+              <% form.object.errors.full_messages.each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: 'form-control' %>
+          <%= form.label :starts_on %>
+          <%= form.date_field :starts_on, class: 'form-control' %>
+          <%= form.label :ends_on %>
+          <%= form.date_field :ends_on, class: 'form-control' %>
+          <%= form.label :percent_off %>
+          <%= form.number_field :percent_off, class: 'form-control' %>
     
+        <div class="form-group">
+        </div>
 
+        <%= form.submit 'Create Sale', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
   </div>
 
 </section>

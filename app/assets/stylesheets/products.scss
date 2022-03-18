@@ -125,3 +125,9 @@ main section.sign-up {
     border-radius: 15px;
   }
 }
+
+main .alert-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
