@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resource :cart, only: [:show] do
     post   :add_item
+    post   :add_item_detail
     post   :remove_item
   end
 

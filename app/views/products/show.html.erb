@@ -22,10 +22,21 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= humanized_money_with_symbol @product.price %></dd>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <dd>
+            <%= button_to add_item_detail_cart_path(product_id: @product.id), class: 'btn btn-primary' , method: :post do%>
+            <%= fa_icon "shopping-cart", text: 'Add' %>
+            <% end %>
+          </dt>
         </dl>
+       
       </div>
     </div>
-
+      
   </article>
 
 </section>

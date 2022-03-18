@@ -11,6 +11,13 @@ class CartsController < ApplicationController
     redirect_to :back
   end
 
+  def add_item_detail
+    product_id = params[:product_id].to_s
+    modify_cart_delta(product_id, +1)
+
+    redirect_to :products
+  end
+
   def remove_item
     product_id = params[:product_id].to_s
     modify_cart_delta(product_id, -1)

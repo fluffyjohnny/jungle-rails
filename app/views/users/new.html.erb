@@ -1,11 +1,17 @@
 <h1>Signup Form</h1>
-
+<section class='sign-up'>
 <%= form_for :user, url: '/users' do |f| %>
-
+  <br>
   Name: <%= f.text_field :name %>
+  <br>
   Email: <%= f.text_field :email %>
+  <br>
   Password: <%= f.password_field :password %>
+  <br>
   Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+  <br>
+  <br>
+  <%= f.submit "Submit", class: "btn btn-primary"%>
 
 <% end %>
+</section>
